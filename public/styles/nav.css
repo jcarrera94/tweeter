@@ -1,0 +1,44 @@
+/*
+Nav css stylesheet
+*/
+nav {
+  z-index: 4000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #3655a3;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 16px;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navTitle {
+  font-family: 'Bungee', cursive;
+  font-size: 36px;
+  color: whitesmoke;
+}
+
+.navSub {
+  font-size: 20px;
+  color: whitesmoke;
+  font-weight: 400;
+  margin-right: 1em;
+}
+
+.navTitle:hover {
+  background-color: whitesmoke;
+  color: #3655a3;
+}
+
+.navSub:hover {
+  background-color: whitesmoke;
+  color: #3655a3;
+}
+
+.bolded {
+  font-weight: 900;
+}
+

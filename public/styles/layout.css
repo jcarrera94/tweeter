@@ -18,8 +18,120 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 30px;
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h3 {
+  margin-bottom: 3px;
+  color: #3662b4f5;
+}
+
+.post {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  height: 150px;
+}
+
+#new-tweet-textbox {
+  border: none;
+  resize: none;
+  width: 100%;
+  height: 40px;
+  background-color: #f4f1ec;
+  border-bottom: 3px solid grey;
+  padding-left: 10px;
+}
+
+#sub-container-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.button {
+  background-color: #3662b4f5;
+  color: #f4f1ec;
+  border-radius: 5px;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
+
+.belowCounter {
+  color: red;
+}
+
+.tweets {
+  width: 100%;
+  /* height: auto; */
+  border-radius: 10px;
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+}
+
+.tweets header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweets:hover {
+  box-shadow: 5px 7px rgb(184, 183, 183);
+}
+
+.tag {
+  visibility: hidden;
+}
+
+.tweets:hover .tag {
+  visibility: visible;
+}
+
+.tweets header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 25px auto 25px;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+}
+
+
+.tweets p {
+  width: 94%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.tweets footer {
+  border-top: 3px solid grey;
+  width: 96%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.padding {
+  padding: 0 5px 0 5px;
+}
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
+* Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ 
+ 
