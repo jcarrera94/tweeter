@@ -30,6 +30,10 @@
 
   <body>
 
+    <button class="button1">
+      <i class="fas fa-angle-double-up"></i>
+    </button>
+
     <audio id="audio">
       <source src="/sounds/beep-03.mp3" type="audio/mpeg">
     </audio>
@@ -40,7 +44,11 @@
         <i class="fas fa-kiwi-bird"></i>
         tweeter
       </div>
-      <div class="navSub"><span class="bolded">Write</span> a new tweet <i class="fas fa-chevron-down"></i></div>
+      <div class="navSub">
+        <div>
+          <span class="bolded">Write</span> a new tweet
+        </div>
+        <i class="fas fa-chevron-down icon"></i></div>
     </nav>
 
     <header class="header">
@@ -55,9 +63,10 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section>
+      <section class="toggle-box">
+        <div class="error"></div>
         <h3>Tweet Right Here!</h3>
-        <form action="/tweets/" method="POST" class="post">
+        <form action="/tweets" method="POST" class="post">
           <textarea id="new-tweet-textbox" name="text" placeholder="What are you kiwiing about?"></textarea>
           <br>
           <div id="sub-container-button">
@@ -66,6 +75,7 @@
           </div>
         </form>
       </section>
+      <section id="tweet-container"></section>
       <!-- <article class="tweets">
          <header>
            <div>

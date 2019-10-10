@@ -22,6 +22,8 @@ nav {
 }
 
 .navSub {
+  display: flex;
+  /* align-items: flex-end */
   font-size: 20px;
   color: whitesmoke;
   font-weight: 400;
@@ -33,12 +35,19 @@ nav {
   color: #3655a3;
 }
 
-.navSub:hover {
-  background-color: whitesmoke;
-  color: #3655a3;
-}
-
 .bolded {
   font-weight: 900;
+}
+
+.icon {
+  margin-left: 15px;
+}
+
+.navSub:hover .icon {
+  animation: 1s linear infinite bounce
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0px)} 50% {transform: translateY(7px)} 100% {transform: translateY(14px)}
 }
 

@@ -3,33 +3,18 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-let data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
 
 $( document ).ready(() => {
+
+  let $container = $('#tweet-container');
+  let $post = $('.post');
+  let textarea = $('#new-tweet-textbox');
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   
   const elapseTime = function (data) {
     let timeDiff = new Date().getTime() - new Date(data).getTime();
@@ -58,11 +43,9 @@ $( document ).ready(() => {
   }
   
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+    $container.empty();
     for (let i of tweets) {
-      $('.container').append(createTweetElement(i));
+      $container.prepend(createTweetElement(i));
     }
   }
   
@@ -78,7 +61,7 @@ $( document ).ready(() => {
              </div>
              <div class="tag">${tweet.user.handle}</div>
            </header>
-           <p>${tweet.content.text}</p>
+           <p>${escape(tweet.content.text)}</p>
            <footer>
              <div>${timeCreated}</div>
              <div class="icons">
@@ -90,8 +73,72 @@ $( document ).ready(() => {
         </article>`;
     return newTweet;
   }
+
+  let loadTweets = async () => {
+    
+    try {
+      const response = await $.ajax({
+        url: 'http://localhost:8080/tweets',
+        type: 'GET',
+        dataType: 'JSON'
+      })
+      
+      renderTweets(response);
+
+    } catch (error) {
+      console.error(error);
+    }
+
+  }
+
+  const isTweetValid = (tweet) => {
+    if (!tweet) {
+      $('.error').text("Invalid Kiweet, try again!")
+      $('.error').fadeIn(400)
+      // setTimeout(() => {
+      //   $('.error').fadeOut(400);
+      // }, 4000);
+      return false;
+    } else if (tweet.length > 140) {
+      $('.error').text("Kiwayyyy too long bud!")
+      $('.error').fadeIn(400)
+      return false;
+    } else {
+      $('.error').fadeOut(400)
+      return true;
+    }
+  }
+
+  const refetchTweets = async (url, data) => {
+    try {
+      await $.ajax({
+        url: url, 
+        type: 'POST',
+        data: data
+      })
+
+      textarea.val('');
+      loadTweets();
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
   
-  renderTweets(data);
+  $post.submit( event => {
+    event.preventDefault();
+    let targteData = $(event.target).serializeArray()[0];
+    let actionUrl = event.target.action;
+    let data = $(event.target).serialize();
+
+    if(!isTweetValid(targteData.value)) {
+      return
+    } else {
+      refetchTweets(actionUrl, data);
+    }
+  });
+
+   loadTweets();
 
 });
 

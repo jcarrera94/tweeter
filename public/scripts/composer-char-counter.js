@@ -21,3 +21,34 @@ $( document ).ready(() => {
     }
   });
 });
+
+// toggle new tweet form away
+$( document ).ready(() => { 
+  $('.navSub').on('click', () => {
+    $('.toggle-box').slideToggle('slow');
+    $('#new-tweet-textbox').focus();
+  })
+});
+
+$( document ).ready(() => { 
+  $('.button1').click(() => {
+    $('html').animate({ scrollTop: 0 }, 600);
+    $('.toggle-box').fadeIn(2000);
+    $('#new-tweet-textbox').focus();
+  })
+})
+
+
+$( document).ready(() => {
+  $(document).scroll(() => {
+    if ($(this).scrollTop() > 350) {
+      console.log('scrolling after 450')
+      $('.button1').fadeIn('slow');
+      $('.navSub').fadeOut('slow');
+    } else {
+      console.log('scrolling below 450')
+      $('.button1').fadeOut('slow');
+      $('.navSub').fadeIn('slow');
+    }
+  })
+})

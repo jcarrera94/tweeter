@@ -22,9 +22,44 @@ body {
   margin-top: 30px;
 }
 
+.button1 {
+  border-radius: 50%;
+  background-color: #3c5fb6d7;
+  color: #f4f1ec;
+  z-index: 9999;
+  position: fixed;
+  bottom: 4%;
+  right: 4%;
+  display: none;
+  height: 50px;
+  width: 50px;
+}
+
+.button1:hover {
+  animation: 1s linear infinite bounce;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0px)} 50% {transform: translateY(7px)} 100% {transform: translateY(14px)}
+}
+
 .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.error {
+  border: 3px solid rgb(255, 93, 93);
+  border-radius: 8px;
+  background-color: rgba(226, 83, 83, 0.212);
+  color: black;
+  margin-top: 35px;
+  height: 50px;
+  display: none;
+}
+
+.toggle-box {
+  display: none;
 }
 
 h3 {
@@ -78,6 +113,7 @@ h3 {
   border: 2px solid grey;
   display: flex;
   flex-direction: column;
+  margin-top: 35px;
   margin-bottom: 35px;
 }
 
