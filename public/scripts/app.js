@@ -95,14 +95,14 @@ $( document ).ready(() => {
 
   const isTweetValid = (tweet) => {
     if (!tweet) {
-      $('.error').text("Invalid Kiweet, try again!")
+      $('.error').text("Invalid Tweet, try again!")
       $('.error').fadeIn(400)
       // setTimeout(() => {
       //   $('.error').fadeOut(400);
       // }, 4000);
       return false;
     } else if (tweet.length > 140) {
-      $('.error').text("Kiwayyyy too long bud!")
+      $('.error').text("Tweet is too long!")
       $('.error').fadeIn(400)
       return false;
     } else {

@@ -6,6 +6,9 @@ $( document ).ready(() => {
   }
 
   $('textarea').on('input', (e) => {
+    const textarea = window.document.querySelector("#new-tweet-textbox");
+
+      textarea.style.height = textarea.scrollHeight + "px";
 
     let wordCount = e.target.value.length;
     let target = $(e.target).parent().find('.counter')
