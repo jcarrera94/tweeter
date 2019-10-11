@@ -9,6 +9,7 @@ $( document ).ready(() => {
   let $container = $('#tweet-container');
   let $post = $('.post');
   let textarea = $('#new-tweet-textbox');
+  let $counter = $('.counter');
 
   const escape =  function(str) {
     let div = document.createElement('div');
@@ -44,6 +45,7 @@ $( document ).ready(() => {
   
   const renderTweets = function(tweets) {
     $container.empty();
+    $counter.text('140');
     for (let i of tweets) {
       $container.prepend(createTweetElement(i));
     }
@@ -78,7 +80,7 @@ $( document ).ready(() => {
     
     try {
       const response = await $.ajax({
-        url: 'http://localhost:8080/tweets',
+        url: '/tweets',
         type: 'GET',
         dataType: 'JSON'
       })
@@ -112,7 +114,7 @@ $( document ).ready(() => {
   const refetchTweets = async (url, data) => {
     try {
       await $.ajax({
-        url: url, 
+        url: '/tweets', 
         type: 'POST',
         data: data
       })

@@ -17,7 +17,7 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-family: 'Source Sans Pro', sans-serif;
   margin-top: 30px;
 }
@@ -54,8 +54,8 @@ body {
   background-color: rgba(226, 83, 83, 0.212);
   color: black;
   margin-top: 35px;
-  height: 50px;
   display: none;
+  text-align: center;
 }
 
 .toggle-box {
@@ -75,8 +75,8 @@ h3 {
 }
 
 #new-tweet-textbox {
-  border: none;
   resize: none;
+  border: none;
   width: 100%;
   height: 40px;
   background-color: #f4f1ec;
@@ -84,7 +84,7 @@ h3 {
   padding-left: 10px;
 }
 
-#sub-container-button {
+#tweet-button {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
@@ -108,7 +108,6 @@ h3 {
 
 .tweets {
   width: 100%;
-  /* height: auto; */
   border-radius: 10px;
   border: 2px solid grey;
   display: flex;
@@ -144,6 +143,7 @@ h3 {
 .avatar {
   height: 50px;
   width: 50px;
+  margin-right: 10px;
 }
 
 
@@ -151,6 +151,7 @@ h3 {
   width: 94%;
   margin: 0 auto;
   padding-bottom: 10px;
+  font-size: 1.3rem;
 }
 
 .tweets footer {
@@ -159,15 +160,101 @@ h3 {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
 }
 
 .padding {
   padding: 0 5px 0 5px;
 }
+
+.icons {
+  transform: scale(1.2)
+}
 /*
 * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  
- 
+ @media only screen and (max-width: 550px) {
+
+  .error {
+    border: 1.5px solid rgb(255, 93, 93);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 75%;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+   h3 {
+     font-size: 1.5rem;
+   }
+  
+   #new-tweet-textbox {
+     font-size: 1rem;
+     height: 25px;
+   }
+
+   #tweet-button {
+     margin-top: 0px;
+     align-items: center;
+     margin-left: -15px;
+   }
+
+   .button {
+    transform: scale(0.7);
+  }
+   
+  .counter {
+    font-size: 1.2rem;
+  }
+
+  .post {
+    padding: 7px;
+    height: 75px;
+  }
+
+  .tweets {
+    border-radius: 7px;
+    border: 1px solid grey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .tweets header div {
+    margin: auto 10px auto 10px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  .tag {
+    font-size: 1.1rem;
+  }
+
+  .tweets p {
+    font-size: 0.9rem;
+    padding-bottom: 5px;
+  }
+
+  .tweets footer {
+    font-size: 0.8rem;
+    padding-top: 7px;
+    border-top: 1.5px solid grey;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+
+  .icons {
+    transform: scale(1.2)
+  }
+
+ }

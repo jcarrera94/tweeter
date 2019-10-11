@@ -11,9 +11,30 @@ Header css stylesheet
   justify-content: flex-start;
   background-color: cornflowerblue;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  margin-top: 2em;
 }
 
-.img {
+img {
   position: relative;
-  top: 56px;
+  top: 13%;
+}
+
+@media only screen and (max-width: 550px) {
+  .header {
+    height: 160px;
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 4rem;
+    padding-left: 5rem;
+    font-size: 1rem;
+  }
+
+  img {
+    height: 6rem;
+    width: 6rem;
+    margin-right: 2rem;
+    margin-bottom: 2.5rem;
+  }
 }

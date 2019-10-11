@@ -6,6 +6,7 @@ $( document ).ready(() => {
   }
 
   $('textarea').on('input', (e) => {
+
     let wordCount = e.target.value.length;
     let target = $(e.target).parent().find('.counter')
     let newCounter = 140 - wordCount;
@@ -32,7 +33,11 @@ $( document ).ready(() => {
 
 $( document ).ready(() => { 
   $('.button1').click(() => {
-    $('html').animate({ scrollTop: 0 }, 600);
+    if($(window).width() < 551) {
+      $('html').animate({ scrollTop: 175 }, 600);
+    } else if ($(window).width() >= 551 && $(window).width() <= 1023) {
+      $('html').animate({ scrollTop: 364 }, 600);
+    }
     $('.toggle-box').fadeIn(2000);
     $('#new-tweet-textbox').focus();
   })
@@ -41,12 +46,10 @@ $( document ).ready(() => {
 
 $( document).ready(() => {
   $(document).scroll(() => {
-    if ($(this).scrollTop() > 350) {
-      console.log('scrolling after 450')
+    if ($(this).scrollTop() > 365) {
       $('.button1').fadeIn('slow');
       $('.navSub').fadeOut('slow');
     } else {
-      console.log('scrolling below 450')
       $('.button1').fadeOut('slow');
       $('.navSub').fadeIn('slow');
     }

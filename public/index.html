@@ -4,6 +4,8 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
@@ -48,17 +50,16 @@
         <div>
           <span class="bolded">Write</span> a new tweet
         </div>
-        <i class="fas fa-chevron-down icon"></i></div>
+        <i class="fas fa-chevron-down icon"></i>
+      </div>
     </nav>
 
     <header class="header">
-        <div class="img">
-            <img src="/images/profile-hex.png"> 
-        </div>
-        <br>
-        <div class="name">
-            <h2>Juan Carrera</h2>
-        </div>
+      <img src="/images/profile-hex.png"> 
+      <br>
+      <div class="name">
+        <h2>Juan Carrera</h2>
+      </div>
     </header>
 
     <!-- Page-specific (main) content here -->
@@ -69,7 +70,7 @@
         <form action="/tweets" method="POST" class="post">
           <textarea id="new-tweet-textbox" name="text" placeholder="What are you kiwiing about?"></textarea>
           <br>
-          <div id="sub-container-button">
+          <div id="tweet-button">
             <input class="button" type="submit" value="Tweet">
             <span class="counter">140</span>
           </div>
