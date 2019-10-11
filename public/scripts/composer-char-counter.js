@@ -34,9 +34,11 @@ $( document ).ready(() => {
 $( document ).ready(() => { 
   $('.button1').click(() => {
     if($(window).width() < 551) {
-      $('html').animate({ scrollTop: 175 }, 600);
+      $('html').animate({ scrollTop: 201 }, 600);
     } else if ($(window).width() >= 551 && $(window).width() <= 1023) {
       $('html').animate({ scrollTop: 364 }, 600);
+    } else {
+      $('html').animate({ scrollTop: 0 }, 600);
     }
     $('.toggle-box').fadeIn(2000);
     $('#new-tweet-textbox').focus();
@@ -46,12 +48,25 @@ $( document ).ready(() => {
 
 $( document).ready(() => {
   $(document).scroll(() => {
-    if ($(this).scrollTop() > 365) {
-      $('.button1').fadeIn('slow');
-      $('.navSub').fadeOut('slow');
+    if ($(window).width() <= 550) {
+      if ($(this).scrollTop() > 120) {
+        $('.button1').fadeIn('slow');
+        $('.navSub').fadeOut('slow');
+        $('.navTitle').fadeOut('slow');
+      } else {
+        $('.button1').fadeOut('slow');
+        $('.navTitle').fadeIn('slow');
+        $('.navSub').fadeIn('slow');
+      }
     } else {
-      $('.button1').fadeOut('slow');
-      $('.navSub').fadeIn('slow');
+      if ($(this).scrollTop() > 365) {
+        $('.button1').fadeIn('slow');
+        $('.navSub').fadeOut('slow');
+      } else {
+        $('.button1').fadeOut('slow');
+        $('.navSub').fadeIn('slow');
+      }
     }
+
   })
 })

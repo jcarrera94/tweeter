@@ -48,15 +48,21 @@ nav {
 
 @media only screen and (max-width: 550px) {
   
+  nav {
+    background-color: transparent;
+  }
+  
   .navTitle {
+    color: #3655a3;
     font-size: 1.5rem;
   }
   
   .navSub div {
     display: none;
   }
-
+  
   .icon {
+    color: #3655a3;
     margin-right: 1rem;
     font-size: 1.5rem;
     margin-top: 0;

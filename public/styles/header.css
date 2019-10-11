@@ -20,15 +20,21 @@ img {
 }
 
 @media only screen and (max-width: 550px) {
+
+  body {
+    margin-top: 0;
+  }
+
   .header {
-    height: 160px;
+    height: 200px;
     font-size: 1rem;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    margin-top: 4rem;
-    padding-left: 5rem;
+    margin-top: 0;
+    padding-top: 2em;
     font-size: 1rem;
+
   }
 
   img {
@@ -37,4 +43,28 @@ img {
     margin-right: 2rem;
     margin-bottom: 2.5rem;
   }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    margin-top: 3em;;
+  }
+
+  #desktop-view {
+    width: 40%;
+    margin: 0 auto;
+    
+  }
+  
+  .header {
+    border-radius: 12px;
+    margin-left: 0.8em;
+  }
+
+  .container {
+    width: 60%;
+    margin: 1em 2em;
+  }
+
 }
